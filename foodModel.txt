@@ -1,0 +1,18 @@
+
+var mongoose = require('mongoose');// Setup schema
+var foodSchema = mongoose.Schema({
+    key: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    imageurl: String,
+    foodDescription: String,
+
+});// Export Contact model
+var food = module.exports = mongoose.model('food', foodSchema);module.exports.get = function (callback, limit) {
+    .find(callback).limit(limit);
+}

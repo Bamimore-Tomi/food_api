@@ -17,6 +17,7 @@ var options = {
   cert: cert,
   ca: ca
 };
+let db_url = 'mongodb+srv://tomi:Bamimore1$@learningapp-grwn4.mongodb.net/amlimentos'
 let app = express();
 let apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://tomi:Bamimore1$@learningapp-grwn4.mongodb.net/amlimentos', { useNewUrlParser: true});
+mongoose.connect(db_url, { useNewUrlParser: true});
 var db = mongoose.connection;
 console.log(db)
 if(!db){

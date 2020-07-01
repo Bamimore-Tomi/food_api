@@ -16,6 +16,9 @@ var orderSchema = mongoose.Schema({
 		type: Number,
 		required: true,
 	},
+	address:{
+		type: String,
+	},
 	time:{
 		type: Date,
 		required: true,

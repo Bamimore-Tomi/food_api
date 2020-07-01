@@ -25,6 +25,7 @@ exports.new = function (req, res) {
     order.quantity = req.body.quantity;// save the order and check for errors
 	order.phone_number= req.body.phone_number;
 	order.time=req.body.time;
+	order.address=req.body.address;
     order.save(function (err) {
 		if (err) {
             res.json({

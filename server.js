@@ -17,13 +17,14 @@ var options = {
   cert: cert,
   ca: ca
 };
-let db_url = 'mongodb+srv://tomi:Bamimore1$@learningapp-grwn4.mongodb.net/amlimentos'
+let db_url=""
 let app = express();
 let apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect(db_url, { useNewUrlParser: true});
@@ -52,11 +53,8 @@ app.use(function (req, res, next) {
 });
 app.use('/api', apiRoutes);app.get('/', (req, res) => res.send('Hello World with Express'));
 
-//var https = require('https');
-//https.createServer(options, app).listen(443); 
+
 const server = app.listen(port, function () {
 	console.log("Running RestHub on port " + port);
 });
 
-
-console.log('FInished')

@@ -1,0 +1,6 @@
+/Procfile
+/encryption/*
+/trial
+/tunnel
+/node_modules/*
+/.env
